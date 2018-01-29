@@ -34,7 +34,7 @@ function download {
 	echo "Downloading Advanced Homework $1 Tex Document..."
 	wget https://c4cs.github.io/static/w18/advanced/c4cs-wk$1-advanced.tex 2>> $output_file	
 }
-function check {
+function check_for_existance {
 	for type in "$homeworkPDF" "$homeworkTEX" "$advancedPDF" "$advancedTEX"; do
 		if [[ "$type" = "$homeworkPDF" || "$type" = "$homeworkTEX" ]]; then
 			if [ -e ~/Desktop/eecs398/Homework/homework-$HOMEWORK_NUM/$type ]; then
@@ -69,6 +69,5 @@ for HOMEWORK_NUM in $@; do
 	advancedTEX="c4cs-wk$HOMEWORK_NUM-advanced.tex"
 
 	download $HOMEWORK_NUM;
-	check
+	check_for_existance;
 done
-
