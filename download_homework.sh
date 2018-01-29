@@ -6,10 +6,10 @@ function exists {
 	echo "$(tput setaf 1)The file \"$1\" already exists."
 }
 function removing {
-	echo "Removing \"$1\" from current directory. $(tput setaf 2)Proceeding .....";
+	echo "Removing \"$1\" from current directory. $(tput setaf 2)$(tput bold)Proceeding .....$(tput sgr0)";
 }
 function doesnotexist {
-	echo "$(tput setaf 1)The file \"$1\" does not exist. $(tput setaf 2)Proceeding .....";
+	echo "$(tput setaf 1)The file \"$1\" does not exist. $(tput setaf 2)$(tput bold)Proceeding .....$(tput sgr0)";
 }
 function moving {
 	echo "$(tput setaf 2)Moving \"$1\" to its destination .....";
